@@ -366,9 +366,7 @@ Features include:
 
 # 👨‍💻 Author
 
-**Ashish Golwa**
-
-QA Lead | AI QA Engineer | Automation Enthusiast
+**Ekta Sharma**
 
 GitHub
 
