@@ -1,173 +1,383 @@
-# 🤖 AI QA Engine
+# 🚀 AI QA Engine
 
-An AI-powered Quality Assurance platform that automates the software testing lifecycle by generating intelligent test cases, Playwright automation scripts, executing tests, and providing interactive dashboards and reports.
+<p align="center">
 
----
+![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.115-green?logo=fastapi)
+![React](https://img.shields.io/badge/React-19-blue?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue?logo=postgresql)
+![Playwright](https://img.shields.io/badge/Playwright-Automation-brightgreen?logo=playwright)
+![Material UI](https://img.shields.io/badge/Material_UI-Frontend-blue?logo=mui)
+![JWT](https://img.shields.io/badge/Auth-JWT-orange)
+![Docker](https://img.shields.io/badge/Docker-Ready-blue?logo=docker)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-## 📌 Project Overview
-
-AI QA Engine is a full-stack web application developed to simplify and accelerate software testing using Artificial Intelligence. The platform enables QA engineers to manage projects, generate AI-based test cases, create Playwright automation scripts, execute tests, and analyse reports from a single dashboard.
-
----
-
-## 🚀 Features
-
-- 🔐 JWT Authentication (Login & Registration)
-- 📁 Project Management
-- 🤖 AI Test Case Generation
-- 🎭 Playwright Script Generation
-- ▶️ Test Execution Dashboard
-- 📊 Interactive Analytics Dashboard
-- 📈 Execution Trend Charts
-- 📄 PDF Report Export
-- 📊 Excel Report Export
-- 📑 Allure Report Download
-- 🎨 Material UI Responsive Design
-- 🔔 Snackbar Notifications
-- 🚪 Logout Confirmation Dialog
-- ❌ Custom 404 Page
+</p>
 
 ---
 
-## 🛠 Tech Stack
+## 📌 Overview
 
-### Frontend
+AI QA Engine is an enterprise-grade AI-powered test automation platform that automatically analyses software repositories, generates intelligent test cases using Large Language Models (LLMs), creates Playwright automation scripts, executes test suites, and provides interactive dashboards with downloadable reports.
 
-- React 19
-- TypeScript
-- Material UI
-- Redux Toolkit
-- React Router
-- Axios
-- Recharts
-- Vite
-
-### Backend
-
-- FastAPI
-- Python
-- SQLAlchemy
-- PostgreSQL
-- JWT Authentication
-- Pydantic
-
-### Automation
-
-- Playwright
-- AI Generated Test Cases
+The platform combines modern backend architecture, AI services, and an intuitive frontend to significantly reduce manual QA effort.
 
 ---
 
-## 📂 Project Structure
+# ✨ Features
 
+✅ AI-powered Test Case Generation
+
+✅ Playwright Script Generation
+
+✅ Repository Analysis
+
+✅ Intelligent Endpoint Detection
+
+✅ Authentication Detection
+
+✅ Dashboard Analytics
+
+✅ JWT Authentication
+
+✅ Project Management
+
+✅ Execution History
+
+✅ PDF Report Export
+
+✅ Excel Report Export
+
+✅ Allure Report Support
+
+✅ PostgreSQL Database
+
+✅ Multiple LLM Providers
+
+- Google Gemini
+- Groq
+- OpenRouter
+
+---
+
+# 🛠 Technology Stack
+
+| Layer | Technology |
+|---------|------------|
+| Backend | FastAPI |
+| Frontend | React + Vite |
+| Language | Python, TypeScript |
+| Database | PostgreSQL |
+| Authentication | JWT |
+| AI Providers | Gemini, Groq, OpenRouter |
+| Automation | Playwright |
+| UI | Material UI |
+| Charts | Recharts |
+| Reports | PDF, Excel, Allure |
+| Version Control | Git + GitHub |
+
+---
+
+# 🏗 Project Architecture
+
+```text
+                    +-----------------------+
+                    |      React UI         |
+                    |  Material UI + Vite   |
+                    +----------+------------+
+                               |
+                               |
+                     REST APIs (JWT)
+                               |
+                               ▼
+                 +--------------------------+
+                 |       FastAPI API        |
+                 +--------------------------+
+                 | Authentication           |
+                 | Dashboard APIs          |
+                 | Project APIs            |
+                 | Test Case APIs          |
+                 | Playwright APIs         |
+                 +------------+------------+
+                              |
+          +-------------------+-------------------+
+          |                   |                   |
+          ▼                   ▼                   ▼
+ Repository Analyzer     AI Engine         Report Engine
+          |                   |                   |
+          |             Gemini/Groq/OpenRouter    |
+          |                   |                   |
+          +-------------------+-------------------+
+                              |
+                              ▼
+                       PostgreSQL Database
 ```
-AI-QA-ENGINE
+
+---
+
+# 📂 Project Structure
+
+```text
+AI_QA_ENGINE
 │
 ├── backend
+│   ├── agents
+│   ├── ai
+│   ├── analyzers
 │   ├── api
-│   ├── services
-│   ├── models
-│   ├── database
-│   ├── utils
-│   └── reports
-│
-├── frontend
-│   ├── components
-│   ├── pages
-│   ├── services
-│   ├── layouts
+│   ├── auth
+│   ├── config
 │   ├── context
-│   └── assets
+│   ├── database
+│   ├── llm
+│   ├── models
+│   ├── prompts
+│   ├── schemas
+│   ├── services
+│   ├── tests
+│   └── utils
 │
+├── ai-qa-frontend
+│   ├── src
+│   ├── public
+│   ├── assets
+│   └── components
+│
+├── docker
+├── docs
+├── generated_reports
+├── generated_tests
+├── repositories
+├── requirements.txt
 └── README.md
 ```
 
 ---
 
-## ⚙ Installation
+# 🔄 Workflow
 
-### Clone Repository
-
-```bash
-git clone <repository-url>
-```
-
-### Backend
-
-```bash
-cd backend
-
-python -m venv .venv
-
-source .venv/bin/activate
-# Windows
-.venv\Scripts\activate
-
-pip install -r requirements.txt
-
-uvicorn main:app --reload
-```
-
-Backend runs at
-
-```
-http://127.0.0.1:8000
+```text
+Repository URL
+      │
+      ▼
+Clone Repository
+      │
+      ▼
+Repository Analysis
+      │
+      ▼
+AI Context Builder
+      │
+      ▼
+LLM (Gemini/Groq/OpenRouter)
+      │
+      ▼
+Generate Test Cases
+      │
+      ▼
+Generate Playwright Scripts
+      │
+      ▼
+Execute Tests
+      │
+      ▼
+Generate Reports
+      │
+      ▼
+Dashboard Analytics
 ```
 
 ---
 
-### Frontend
+# 📊 Dashboard
+
+The dashboard provides:
+
+- Total Projects
+- Total Test Cases
+- Execution Statistics
+- Pass / Fail Rate
+- Recent Executions
+- Execution Trend
+- Project Analytics
+- Test Coverage
+
+---
+
+# 📷 Screenshots
+
+## Login
+
+```
+screenshots/login.png
+```
+
+---
+
+## Dashboard
+
+```
+screenshots/dashboard.png
+```
+
+---
+
+## Projects
+
+```
+screenshots/projects.png
+```
+
+---
+
+## Test Case Generator
+
+```
+screenshots/testcases.png
+```
+
+---
+
+## Playwright Generator
+
+```
+screenshots/playwright.png
+```
+
+---
+
+## Reports
+
+```
+screenshots/reports.png
+```
+
+---
+
+# ⚙ Installation
+
+## Clone
 
 ```bash
-cd frontend
+git clone https://github.com/ekta124sh/AI-QA-ENGINE.git
+
+cd AI-QA-ENGINE
+```
+
+---
+
+## Backend
+
+```bash
+python -m venv .venv
+
+source .venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+---
+
+## Frontend
+
+```bash
+cd ai-qa-frontend
 
 npm install
 
 npm run dev
 ```
 
-Frontend runs at
+---
 
+## Configure Environment
+
+Create a `.env`
+
+```env
+APP_NAME=AI QA Engine
+
+DB_HOST=
+
+DB_PORT=
+
+DB_NAME=
+
+DB_USER=
+
+DB_PASSWORD=
+
+JWT_SECRET_KEY=
+
+GROQ_API_KEY=
+
+GEMINI_API_KEY=
+
+OPENROUTER_API_KEY=
 ```
-http://localhost:5173
+
+---
+
+## Run Backend
+
+```bash
+uvicorn main:app --reload
 ```
 
 ---
 
-## Authentication
+## Run Frontend
 
-- Register New User
-- Login using JWT Authentication
-- Protected Routes
-- Automatic Logout on Session Expiry
-
----
-
-## Reports
-
-- PDF Export
-- Excel Export
-- Allure Report
+```bash
+npm run dev
+```
 
 ---
 
-## Future Enhancements
+# 🔐 Authentication
 
-- Role Based Access Control
-- Email Notifications
-- Docker Deployment
-- CI/CD Integration
+JWT-based authentication is implemented.
+
+Features include:
+
+- User Registration
+- Login
+- Secure Password Hashing
+- Protected APIs
+- Token Validation
+
+---
+
+# 📈 Future Enhancements
+
+- Azure OpenAI Integration
 - GitHub Actions
-- AI Chat Assistant
-- Multi-user Collaboration
+- Jenkins Pipeline
+- CI/CD Automation
+- Selenium Support
+- Cypress Support
+- AI Bug Prediction
+- Test Impact Analysis
+- Slack Notifications
+- Jira Integration
 
 ---
 
-## Developed By
+# 👨‍💻 Author
 
-Ashish Golwa
+**Ashish Golwa**
 
-Senior QA Engineer | Automation Engineer
+QA Lead | AI QA Engineer | Automation Enthusiast
 
-Technologies:
-Python | FastAPI | React | TypeScript | PostgreSQL | Playwright | Material UI
+GitHub
+
+LinkedIn
+
+Email
+
+---
+
+# ⭐ If you like this project
+
+Please consider giving it a ⭐ on GitHub!
